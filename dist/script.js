@@ -28,6 +28,7 @@ var canvas = document.getElementById("can1");
 
 function fupload() {
   var filename = document.getElementById("finput");
+  console.log(filename);
   orimage = new SimpleImage(filename);
   orimage.drawTo(canvas);
 }

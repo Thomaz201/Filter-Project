@@ -1,50 +1,235 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Fun</title>
+  </head>
 
-<head>
-  <title>Filter Fun</title>
-  <script src="./script.js">
-  </script>
-  <link rel="stylesheet" type="css" href="./style.css" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <body>
+    <header>
+      <h1>Filter Fun</h1>
+    </header>
+    <div>
+      <h2>Play with these filters:</h2>
+      <canvas id="can1"></canvas>
+    </div>
 
-<body>
-  <header>
-    <h1>Filter Fun</h1>
-  </header>
-  <div>
-    <h2>Play with these filters:</h2>
-    <canvas id="can1"></canvas>
-    <p>
-      <input type="file" id="finput" multiple="false" accept="image/*" onchange="fupload()"></p>
-    <p><input type="button" class="filterbuttons" id="greyscaleb" value="Greyscale" onclick="greyscale()"></p>
-    <p><input type="button" class="filterbuttons" id="redscale" value="Redscale" onclick="dored()"></p>
-    <p><input type="button" class="filterbuttons" id="greenscale" value="Greenscale" onclick="dogreen()"></p>
-    <p><input type="button" class="filterbuttons" id="bluescale" value="Bluescale" onclick="doblue()"></p>
-    <p><input type="button" class="filterbuttons" id="cyanscale" value="Cyanscale" onclick="docyan()"></p>
-    <p><input type="button" class="filterbuttons" id="magscale" value="Magentascale" onclick="domagenta()"></p>
-    <p><input type="button" class="filterbuttons" id="yellowscale" value="Yellowscale" onclick="doyellow()"></p>
-    <p><input type="button" class="filterbuttons" id="limescale" value="Limescale" onclick="dolime()"></p>
-    <p><input type="button" class="filterbuttons" id="dvioletscale" value="Violetscale" onclick="dodviolet()"></p>
-    <p><input type="button" class="filterbuttons" id="fbrickscale" value="Firebrickscale" onclick="dofbrick()"></p>
-    <p><input type="button" class="filterbuttons" id="seagreenscale" value="Seascale" onclick="doseagreen()"></p>
-    <p><input type="button" class="filterbuttons" id="darkslatebscale" value="DarkslateBluescale"
-        onclick="dodarksblue()"></p>
-    <p><input type="button" class="filterbuttons" id="negativescale" value="Negative" onclick="donegative()"></p>
-    <p><input type="button" class="filterbuttons" id="threestripes" value="Three Stripes" onclick="threestripes()"></p>
-    <p><input type="button" class="filterbuttons" id="sepiafilter" value="Sepia Filter" onclick="dosepiafilter()"></p>
-    <p><input type="button" class="filterbuttons" id="siennascale" value="SiennaWoodscale" onclick="dosienna()"></p>
-    <p><input type="button" class="filterbuttons" id="sepiahuefilter" value="Sepia Hue" onclick="dosepiahue()"></p>
-    <p><input type="button" class="filterbuttons" id="rainbow" value="Rainbow" onclick="dorainbow()"></p>
-    <p><input type="button" class="filterbuttons" id="border" value="Border" onclick="doborder()"></p>
-    <!--<p><input type="button" class="filterbuttons" id="lineargradient" value="Linear Grad (1)" onclick="dolingrad()"></p> -->
-    <p><input type="button" class="filterbuttons" id="blurimag" value="Blurfilter" onclick="filterBlur()"></p>
-    <p><input type="button" class="filterbuttons" id="accentimag" value="Accent" onclick="doaccent()"></p>
-    <p><input type="button" class="filterbuttons" id="ReB" value="Red&Blue" onclick="Sredeblue()"></p>
-    <p><input type="button" class="filterbuttons" id="ReG" value="Green&Red" onclick="Sredegreen()"></p>
-    <p><input type="button" class="filterbuttons" id="BeG" value="Blue&Green" onclick="Sblueegreen()"></p>
-    <p><input type="button" class="filterbuttons" id="resetei" value="Reset" onclick="resetei()"></p>
-</body>
+    <div id="buttonsContainer">
+      <label for="finput" id="inputLabel" class="btn">Selecione a imagem</label>
+      <input
+        type="file"
+        id="finput"
+        multiple="false"
+        accept="image/*"
+        onchange="fupload()"
+        placeholder="Escolher"
+      />
 
+      <input
+        type="button"
+        class="filterbuttons"
+        id="greyscaleb"
+        value="Greyscale"
+        onclick="greyscale()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="redscale"
+        value="Redscale"
+        onclick="dored()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="greenscale"
+        value="Greenscale"
+        onclick="dogreen()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="bluescale"
+        value="Bluescale"
+        onclick="doblue()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="cyanscale"
+        value="Cyanscale"
+        onclick="docyan()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="magscale"
+        value="Magentascale"
+        onclick="domagenta()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="yellowscale"
+        value="Yellowscale"
+        onclick="doyellow()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="limescale"
+        value="Limescale"
+        onclick="dolime()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="dvioletscale"
+        value="Violetscale"
+        onclick="dodviolet()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="fbrickscale"
+        value="Firebrickscale"
+        onclick="dofbrick()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="seagreenscale"
+        value="Seascale"
+        onclick="doseagreen()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="darkslatebscale"
+        value="DarkslateBluescale"
+        onclick="dodarksblue()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="negativescale"
+        value="Negative"
+        onclick="donegative()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="threestripes"
+        value="Three Stripes"
+        onclick="threestripes()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="sepiafilter"
+        value="Sepia Filter"
+        onclick="dosepiafilter()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="siennascale"
+        value="SiennaWoodscale"
+        onclick="dosienna()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="sepiahuefilter"
+        value="Sepia Hue"
+        onclick="dosepiahue()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="rainbow"
+        value="Rainbow"
+        onclick="dorainbow()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="border"
+        value="Border"
+        onclick="doborder()"
+      />
+
+      <!--<input type="button" class="filterbuttons" id="lineargradient" value="Linear Grad (1)" onclick="dolingrad()"> -->
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="blurimag"
+        value="Blurfilter"
+        onclick="filterBlur()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="accentimag"
+        value="Accent"
+        onclick="doaccent()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="ReB"
+        value="Red&Blue"
+        onclick="Sredeblue()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="ReG"
+        value="Green&Red"
+        onclick="Sredegreen()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="BeG"
+        value="Blue&Green"
+        onclick="Sblueegreen()"
+      />
+
+      <input
+        type="button"
+        class="filterbuttons"
+        id="resetei"
+        value="Reset"
+        onclick="resetei()"
+      />
+    </div>
+  </body>
 </html>

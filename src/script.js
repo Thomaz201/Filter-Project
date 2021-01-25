@@ -1,4 +1,4 @@
-var orimage = null;
+var originalImage = null;
 var accentimage = null;
 var blurimage = null;
 var greyimage = null;
@@ -28,16 +28,16 @@ var canvas = document.getElementById("can1");
 
 function fupload() {
   var filename = document.getElementById("finput");
-  orimage = new SimpleImage(filename);
-  orimage.drawTo(canvas);
+  originalImage = new SimpleImage(filename);
+  originalImage.drawTo(canvas);
 }
 
 function greyscale() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  greyimage = new SimpleImage(orimage);
+  greyimage = new SimpleImage(originalImage);
   for (var pixel of greyimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     pixel.setRed(avg);
@@ -48,11 +48,11 @@ function greyscale() {
 }
 
 function dored() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  redimage = new SimpleImage(orimage);
+  redimage = new SimpleImage(originalImage);
   for (var pixel of redimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -70,11 +70,11 @@ function dored() {
 }
 
 function dogreen() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  greenimage = new SimpleImage(orimage);
+  greenimage = new SimpleImage(originalImage);
   for (var pixel of greenimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -92,11 +92,11 @@ function dogreen() {
 }
 
 function doblue() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  blueimage = new SimpleImage(orimage);
+  blueimage = new SimpleImage(originalImage);
   for (var pixel of blueimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -114,11 +114,11 @@ function doblue() {
 }
 
 function docyan() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  cyanimage = new SimpleImage(orimage);
+  cyanimage = new SimpleImage(originalImage);
   for (var pixel of cyanimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -136,11 +136,11 @@ function docyan() {
 }
 
 function domagenta() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  magimage = new SimpleImage(orimage);
+  magimage = new SimpleImage(originalImage);
   for (var pixel of magimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -158,11 +158,11 @@ function domagenta() {
 }
 
 function doyellow() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  yellowimage = new SimpleImage(orimage);
+  yellowimage = new SimpleImage(originalImage);
   for (var pixel of yellowimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -180,11 +180,11 @@ function doyellow() {
 }
 
 function dolime() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  limeimage = new SimpleImage(orimage);
+  limeimage = new SimpleImage(originalImage);
   for (var pixel of limeimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -202,11 +202,11 @@ function dolime() {
 }
 
 function dodviolet() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  dvioletimage = new SimpleImage(orimage);
+  dvioletimage = new SimpleImage(originalImage);
   for (var pixel of dvioletimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -224,11 +224,11 @@ function dodviolet() {
 }
 
 function dofbrick() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  fbrickimage = new SimpleImage(orimage);
+  fbrickimage = new SimpleImage(originalImage);
   for (var pixel of fbrickimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -246,11 +246,11 @@ function dofbrick() {
 }
 
 function doseagreen() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  seaimage = new SimpleImage(orimage);
+  seaimage = new SimpleImage(originalImage);
   for (var pixel of seaimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -268,11 +268,11 @@ function doseagreen() {
 }
 
 function dodarksblue() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  dslatebimage = new SimpleImage(orimage);
+  dslatebimage = new SimpleImage(originalImage);
   for (var pixel of dslatebimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -290,11 +290,11 @@ function dodarksblue() {
 }
 
 function dosienna() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  siennaimage = new SimpleImage(orimage);
+  siennaimage = new SimpleImage(originalImage);
   for (var pixel of siennaimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     if (avg < 128) {
@@ -312,11 +312,11 @@ function dosienna() {
 }
 
 function donegative() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  negimage = new SimpleImage(orimage);
+  negimage = new SimpleImage(originalImage);
   for (var pixel of negimage.values()) {
     pixel.setRed(255 - pixel.getRed());
     pixel.setGreen(255 - pixel.getGreen());
@@ -326,11 +326,11 @@ function donegative() {
 }
 
 function threestripes() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  threestripesimage = new SimpleImage(orimage);
+  threestripesimage = new SimpleImage(originalImage);
   for (var pixel of threestripesimage.values()) {
     var x = pixel.getX();
     var y = pixel.getY();
@@ -381,11 +381,11 @@ function threestripes() {
 }
 
 function dosepiafilter() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  sepiaimage = new SimpleImage(orimage);
+  sepiaimage = new SimpleImage(originalImage);
   for (var pixel of sepiaimage.values()) {
     var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
     pixel.setRed(avg * 1.58);
@@ -396,11 +396,11 @@ function dosepiafilter() {
 }
 
 function dosepiahue() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  sephueimage = new SimpleImage(orimage);
+  sephueimage = new SimpleImage(originalImage);
   for (var pixel of sephueimage.values()) {
     pixel.setRed(pixel.getRed() * 1.07);
     pixel.setGreen(pixel.getGreen() * 0.74);
@@ -410,11 +410,11 @@ function dosepiahue() {
 }
 
 function dorainbow() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  rainimage = new SimpleImage(orimage);
+  rainimage = new SimpleImage(originalImage);
   for (var pixel of rainimage.values()) {
     var y = pixel.getY();
     var height = rainimage.getHeight();
@@ -505,11 +505,11 @@ function dorainbow() {
 }
 
 function doborder() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  bordimage = new SimpleImage(orimage);
+  bordimage = new SimpleImage(originalImage);
   for (var pixel of bordimage.values()) {
     var y = pixel.getY();
     var x = pixel.getX();
@@ -528,11 +528,11 @@ function doborder() {
 }
 
 function dolingrad() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  lingradimage = new SimpleImage(orimage);
+  lingradimage = new SimpleImage(originalImage);
   var ctx = canvas.getContext("2d");
   var grad = ctx.createLinearGradient(0, 0, 800, 0);
   grad.addColorStop(0, "rgba(148,0,211,0.6)");
@@ -546,11 +546,11 @@ function randomBetween(start, end) {
 }
 
 function filterBlur() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  blurimage = new SimpleImage(orimage);
+  blurimage = new SimpleImage(originalImage);
   var hcanv = blurimage.getHeight();
   var wcanv = blurimage.getWidth();
   for (var pixel of blurimage.values()) {
@@ -575,11 +575,11 @@ function filterBlur() {
 }
 
 function doaccent() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  accentimage = new SimpleImage(orimage);
+  accentimage = new SimpleImage(originalImage);
   for (var pixel of accentimage.values()) {
     if (
       pixel.getBlue() > pixel.getGreen() &&
@@ -618,11 +618,11 @@ function doaccent() {
 }
 
 function Sredeblue() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  brimage = new SimpleImage(orimage);
+  brimage = new SimpleImage(originalImage);
   for (var pixel of brimage.values()) {
     var blue = pixel.getBlue();
     var red = pixel.getRed();
@@ -633,11 +633,11 @@ function Sredeblue() {
 }
 
 function Sredegreen() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  rgimage = new SimpleImage(orimage);
+  rgimage = new SimpleImage(originalImage);
   for (var pixel of rgimage.values()) {
     var green = pixel.getGreen();
     var red = pixel.getRed();
@@ -648,11 +648,11 @@ function Sredegreen() {
 }
 
 function Sblueegreen() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
-  bgimage = new SimpleImage(orimage);
+  bgimage = new SimpleImage(originalImage);
   for (var pixel of bgimage.values()) {
     var green = pixel.getGreen();
     var blue = pixel.getBlue();
@@ -663,11 +663,11 @@ function Sblueegreen() {
 }
 
 function resetei() {
-  if (orimage === null || !orimage.complete()) {
+  if (originalImage === null || !originalImage.complete()) {
     alert("Image not loaded!");
     return;
   }
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  orimage.drawTo(canvas);
+  originalImage.drawTo(canvas);
 }
